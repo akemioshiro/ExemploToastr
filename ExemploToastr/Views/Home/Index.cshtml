@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<script src="http://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+
+<div class="jumbotron">
+    <h1>Exemplo Toastr</h1>
+    <p class="lead">
+        Biblioteca: http://codeseven.github.io/toastr/
+    </p>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <p><button class="btn btn-default" id="btn-info">Informação</button></p>
+    </div>
+    
+    <div class="col-md-3">
+        <p><button class="btn btn-warning" id="btn-warning">Alerta</button></p>
+    </div>
+
+    <div class="col-md-3">
+        <p><button class="btn btn-danger" id="btn-error">Erro</button></p>
+    </div>
+
+    <div class="col-md-3">
+        <p><button class="btn btn-success" id="btn-success">Sucesso</button></p>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $("#btn-info").click(function () {
+            toastr.options = {
+                "timeOut": "1000",
+                "positionClass":"toast-bottom-left"
+            };
+            toastr.info("Informação");
+        });
+
+        $("#btn-warning").click(function () {
+            toastr.warning("Alerta");
+        });
+
+        $("#btn-error").click(function () {
+            toastr.error("Erro");
+        });
+
+        $("#btn-success").click(function () {
+            toastr.success("Sucesso");
+        });
+    });
+
+</script>
+
